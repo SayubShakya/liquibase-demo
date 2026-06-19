@@ -39,12 +39,4 @@ public class EmployeeController {
         return ResponseEntity.ok().build();
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee updatedEmployee, @PathVariable("id") int employeeId) {
-        try {
-            return ResponseEntity.ok(employeeService.updateEmployee(updatedEmployee, employeeId));
-        } catch (EmployeeException ex) {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }
